@@ -1,0 +1,517 @@
+/* ═══════════════════════════════════════════════════════════════
+   HAPPY PROPERTY — Sales Deck Template
+   A4 Landscape (297mm × 210mm)
+   ═══════════════════════════════════════════════════════════════ */
+
+@page {
+  size: A4 landscape;
+  margin: 0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-size: 10pt;
+  color: #0a0a0a;
+  background: #fffcf6;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; }
+
+.page {
+  width: 297mm;
+  height: 210mm;
+  overflow: hidden;
+  position: relative;
+  page-break-after: always;
+  background: #fffcf6;
+}
+.page:last-child { page-break-after: auto; }
+
+/* Brand colors */
+:root {
+  --coral: #ff795d;
+  --dark: #0a0a0a;
+  --cream: #fffcf6;
+}
+
+/* ───── Shared accents ─────────────────────────────────────────── */
+.coral-rule {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--coral);
+  margin-bottom: 14px;
+}
+.section-label {
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--coral);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+}
+.subtitle {
+  font-size: 11pt;
+  color: #555;
+  margin-top: 8px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* Footer (Pages 2-12) */
+.footer {
+  position: absolute;
+  bottom: 12mm;
+  left: 18mm;
+  right: 18mm;
+  display: flex;
+  justify-content: space-between;
+  font-size: 7.5pt;
+  letter-spacing: 0.08em;
+  color: #888;
+  text-transform: uppercase;
+}
+
+/* Placeholder for missing images */
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eee 25%, #ddd 25%, #ddd 50%, #eee 50%, #eee 75%, #ddd 75%);
+  background-size: 20px 20px;
+  color: #888;
+  font-size: 9pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  width: 100%;
+  height: 100%;
+}
+
+/* ═══════════════════ PAGE 1 — COVER ═══════════════════ */
+.page-cover { background: var(--dark); }
+.page-cover .hero {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 60%;
+  background-size: cover;
+  background-position: center;
+}
+.page-cover .hero img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.page-cover .strip {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 40%;
+  background: var(--dark);
+  padding: 16mm 22mm;
+  color: #fffcf6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.page-cover .strip .coral-rule { margin-bottom: 10px; }
+.page-cover .strip .label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+.page-cover .strip .label {
+  font-size: 8pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--coral);
+  font-weight: 700;
+}
+.page-cover .strip h1 {
+  font-size: 62pt;
+  line-height: 0.95;
+  color: #fffcf6;
+  margin: 4mm 0 6mm;
+  letter-spacing: -0.02em;
+}
+.page-cover .strip .sub {
+  font-size: 13pt;
+  color: rgba(255, 252, 246, 0.85);
+  max-width: 70%;
+  line-height: 1.35;
+  font-weight: 300;
+}
+.page-cover .hp-logo {
+  position: absolute;
+  top: 12mm;
+  right: 18mm;
+  width: 38px;
+  height: 38px;
+  border: 2px solid var(--coral);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--coral);
+  font-family: 'Playfair Display', serif;
+  font-size: 18pt;
+  font-weight: 700;
+  background: rgba(10,10,10,0.4);
+}
+
+/* ═══════════════════ PAGE 2 — LAGE ═══════════════════ */
+.page-lage { display: flex; }
+.page-lage .left {
+  width: 42%;
+  padding: 22mm 14mm 22mm 22mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.page-lage .left h2 { font-size: 38pt; line-height: 1.05; letter-spacing: -0.01em; }
+.page-lage .left p { margin-top: 10mm; font-size: 11pt; line-height: 1.55; color: #333; }
+.page-lage .right { width: 58%; }
+.page-lage .right img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ═══════════════════ PAGE 3 — STANDORT ═══════════════════ */
+.page-standort { padding: 22mm 22mm 22mm 22mm; }
+.page-standort h2 { font-size: 36pt; margin-bottom: 12mm; }
+.page-standort .grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 14mm;
+}
+.poi-list { display: flex; flex-direction: column; gap: 5mm; }
+.poi { display: flex; align-items: baseline; gap: 4mm; padding-bottom: 4mm; border-bottom: 1px solid #ddd; }
+.poi .min {
+  font-family: 'Playfair Display', serif;
+  font-size: 26pt;
+  color: var(--coral);
+  font-weight: 700;
+  min-width: 90px;
+  line-height: 1;
+}
+.poi .name { font-size: 11pt; color: #222; }
+.map-container { position: relative; }
+.map-container img { width: 100%; border-radius: 4px; }
+.map-container .placeholder { height: 85mm; }
+.maps-btn {
+  display: inline-block;
+  background: var(--coral);
+  color: white;
+  padding: 10px 18px;
+  font-size: 8.5pt;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 6mm;
+  border-radius: 2px;
+}
+
+/* ═══════════════════ PAGE 4 — PROJEKT ═══════════════════ */
+.page-projekt { padding: 22mm 22mm 0; display: flex; flex-direction: column; }
+.page-projekt h2 { font-size: 44pt; margin-bottom: 8mm; line-height: 1; }
+.page-projekt .image-frame { flex: 1; margin-bottom: 12mm; }
+.page-projekt .image-frame img,
+.page-projekt .image-frame .placeholder { width: 100%; height: 100mm; object-fit: cover; }
+.page-projekt .strap {
+  text-align: center;
+  font-size: 11pt;
+  color: #444;
+  font-weight: 500;
+  padding-bottom: 4mm;
+}
+
+/* ═══════════════════ PAGE 5 — USP ═══════════════════ */
+.page-usp { padding: 22mm 22mm 0; display: flex; flex-direction: column; }
+.page-usp .heading-block { margin-bottom: 8mm; }
+.page-usp h2 { font-size: 32pt; line-height: 1.05; }
+.page-usp .image-frame { height: 80mm; margin-bottom: 8mm; }
+.page-usp .image-frame img, .page-usp .image-frame .placeholder { width: 100%; height: 100%; object-fit: cover; }
+.usp-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4mm;
+}
+.usp-feature .coral-rule { width: 24px; height: 2px; margin-bottom: 6px; }
+.usp-feature .value {
+  font-family: 'Playfair Display', serif;
+  font-size: 18pt;
+  color: var(--dark);
+  font-weight: 700;
+  line-height: 1.05;
+  margin-bottom: 3px;
+}
+.usp-feature .label {
+  font-size: 7.5pt;
+  color: #666;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+
+/* ═══════════════════ PAGE 6 — AMENITIES ═══════════════════ */
+.page-amenities { padding: 22mm 22mm 0; }
+.page-amenities h2 { font-size: 32pt; margin-bottom: 8mm; }
+.amenity-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; height: 120mm; }
+.amenity {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+.amenity img, .amenity .placeholder { width: 100%; height: 100%; object-fit: cover; }
+.amenity .label {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 14px 16px 12px;
+  background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0));
+  color: white;
+  font-size: 9pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* ═══════════════════ PAGE 7 — PREISE ═══════════════════ */
+.page-preise { padding: 22mm 22mm 0; }
+.page-preise h2 { font-size: 32pt; margin-bottom: 8mm; }
+.preis-table { width: 100%; border-collapse: collapse; margin-bottom: 8mm; }
+.preis-table thead th {
+  text-align: left;
+  font-size: 8pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #666;
+  font-weight: 700;
+  padding: 8px 6px;
+  border-bottom: 1px solid #ccc;
+}
+.preis-table tbody td {
+  padding: 12px 6px;
+  font-size: 11pt;
+  border-bottom: 1px solid #e5e5e5;
+}
+.preis-table tbody td.type { font-weight: 600; }
+.preis-table tbody td.gross { color: var(--coral); font-weight: 700; }
+.footer-box {
+  background: #f0eee5;
+  padding: 14px 18px;
+  border-left: 3px solid var(--coral);
+  border-radius: 0 4px 4px 0;
+}
+.footer-box .ttl { font-weight: 700; font-size: 10pt; margin-bottom: 4px; }
+.footer-box .txt { font-size: 9pt; color: #444; line-height: 1.45; }
+
+/* ═══════════════════ PAGE 8 — EXTRAS ═══════════════════ */
+.page-extras { padding: 22mm 22mm 0; }
+.page-extras h2 { font-size: 32pt; margin-bottom: 6mm; }
+.extras-table { width: 100%; border-collapse: collapse; margin-top: 8mm; }
+.extras-table thead th {
+  text-align: left;
+  font-size: 8pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #666;
+  font-weight: 700;
+  padding: 10px 6px;
+}
+.extras-table tbody td {
+  padding: 12px 6px;
+  font-size: 10pt;
+  border-top: 1px solid #e5e5e5;
+}
+.extras-table tbody td.name { font-family: 'Playfair Display', serif; font-size: 12pt; font-weight: 700; }
+.extras-included {
+  margin-top: 8mm;
+  background: #f0eee5;
+  padding: 14px 18px;
+  border-left: 3px solid var(--coral);
+  border-radius: 0 4px 4px 0;
+}
+
+/* ═══════════════════ PAGE 9 & 10 — INTERIEUR ═══════════════════ */
+.page-interior { padding: 22mm 22mm 22mm; display: flex; flex-direction: column; }
+.page-interior h2 { font-size: 32pt; }
+.interior-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; margin-top: 8mm; }
+.interior-img { display: flex; flex-direction: column; }
+.interior-img .frame { height: 110mm; overflow: hidden; border-radius: 2px; }
+.interior-img img, .interior-img .frame .placeholder { width: 100%; height: 100%; object-fit: cover; }
+.interior-img .cap { margin-top: 10px; font-size: 8pt; letter-spacing: 0.18em; text-transform: uppercase; color: #555; font-weight: 700; }
+
+/* ═══════════════════ PAGE 11 — HIGHLIGHT ═══════════════════ */
+.page-highlight { padding: 0; display: flex; flex-direction: column; }
+.page-highlight .top { height: 65%; }
+.page-highlight .top img, .page-highlight .top .placeholder { width: 100%; height: 100%; object-fit: cover; }
+.page-highlight .bottom { height: 35%; background: var(--dark); color: #fffcf6; padding: 14mm 22mm; display: flex; align-items: center; justify-content: space-between; gap: 8mm; }
+.page-highlight .bottom .text-block { flex: 1; }
+.page-highlight .bottom h2 { font-size: 32pt; color: #fffcf6; line-height: 1.05; }
+.page-highlight .bottom .subtitle { color: rgba(255,252,246,0.8); margin-top: 6mm; }
+.page-highlight .bottom .value-block { text-align: right; }
+.page-highlight .bottom .value-block .v {
+  font-family: 'Playfair Display', serif;
+  font-size: 56pt;
+  color: var(--coral);
+  font-weight: 700;
+  line-height: 1;
+}
+.page-highlight .bottom .value-block .l {
+  font-size: 8pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,252,246,0.7);
+  margin-top: 6px;
+}
+/* Footer auf Seite 11 in den oberen weißen Streifen (sonst überlappt er den dark strip) */
+.page-highlight .footer {
+  position: absolute;
+  top: calc(65% - 8mm);
+  left: 18mm;
+  right: 18mm;
+  bottom: auto;
+  color: rgba(255,252,246,0.9);
+  background: rgba(10,10,10,0.55);
+  padding: 4px 8px;
+  border-radius: 2px;
+  width: auto;
+}
+
+/* ═══════════════════ PAGE 12 — ZAHLUNGSPLAN ═══════════════════ */
+.page-zahlung { padding: 22mm 22mm 0; }
+.page-zahlung h2 { font-size: 32pt; margin-bottom: 8mm; }
+.zahlung-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4mm;
+  margin-top: 8mm;
+}
+.zahlung-step {
+  border-top: 2px solid var(--coral);
+  padding: 10px 12px 14px;
+  background: white;
+  border-radius: 0 0 2px 2px;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  border-left: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  min-height: 75mm;
+}
+.zahlung-step .num {
+  font-family: 'Playfair Display', serif;
+  font-size: 18pt;
+  color: var(--coral);
+  font-weight: 700;
+  margin-bottom: 6mm;
+}
+.zahlung-step .pct {
+  font-family: 'Playfair Display', serif;
+  font-size: 22pt;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 14mm;
+}
+.zahlung-step .label {
+  font-size: 8pt;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 4mm;
+}
+.zahlung-step .trigger { font-size: 8.5pt; color: #666; line-height: 1.3; }
+.zahlung-footer { margin-top: 8mm; font-size: 8.5pt; color: #666; }
+
+/* ═══════════════════ PAGE 13 — CTA ═══════════════════ */
+.page-cta { padding: 0; position: relative; color: white; }
+.page-cta .bg { position: absolute; inset: 0; }
+.page-cta .bg img, .page-cta .bg .placeholder { width: 100%; height: 100%; object-fit: cover; }
+.page-cta .overlay {
+  position: absolute; inset: 0;
+  background: rgba(10, 10, 10, 0.65);
+}
+.page-cta .content {
+  position: absolute;
+  inset: 0;
+  padding: 30mm 22mm 16mm;
+  display: flex;
+  flex-direction: column;
+}
+.page-cta .label-row {
+  text-align: center;
+  margin-bottom: 5mm;
+}
+.page-cta .label-row .coral-rule { margin: 0 auto 8px; }
+.page-cta .label-row .label {
+  font-size: 8pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--coral);
+  font-weight: 700;
+}
+.page-cta h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 52pt;
+  text-align: center;
+  margin-bottom: 6mm;
+  line-height: 1;
+}
+.page-cta .sub-cta { text-align: center; font-size: 13pt; color: rgba(255,252,246,0.85); margin-bottom: 16mm; }
+.cta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8mm;
+  max-width: 240mm;
+  margin: 0 auto;
+}
+.cta-step {
+  border: 1px solid var(--coral);
+  padding: 12mm 8mm;
+  display: flex;
+  flex-direction: column;
+  background: rgba(10,10,10,0.3);
+}
+.cta-step .num {
+  font-family: 'Playfair Display', serif;
+  font-size: 16pt;
+  color: var(--coral);
+  margin-bottom: 4mm;
+  font-weight: 700;
+}
+.cta-step .ttl {
+  font-size: 9pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 4mm;
+}
+.cta-step .txt { font-size: 9.5pt; color: rgba(255,252,246,0.9); line-height: 1.4; }
+.cta-hp-logo {
+  position: absolute;
+  bottom: 22mm;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--coral);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--coral);
+  font-family: 'Playfair Display', serif;
+  font-size: 20pt;
+  font-weight: 700;
+  background: rgba(10,10,10,0.4);
+}
+.cta-disclaimer {
+  position: absolute;
+  bottom: 8mm;
+  left: 22mm;
+  right: 22mm;
+  text-align: center;
+  font-size: 7pt;
+  color: rgba(255,252,246,0.5);
+}

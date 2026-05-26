@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<title>{{project.name}} — Sales Deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>{{{styles}}}</style>
+</head>
+<body>
+
+<!-- ═══════════════════ PAGE 1 — COVER ═══════════════════ -->
+<section class="page page-cover">
+  <div class="hero">
+    {{#images.hero_url}}<img src="{{{images.hero_url}}}" alt="" />{{/images.hero_url}}
+    {{^images.hero_url}}<div class="placeholder">HERO</div>{{/images.hero_url}}
+  </div>
+  <div class="hp-logo">HP</div>
+  <div class="strip">
+    <span class="coral-rule"></span>
+    <div class="label-row">
+      <span class="label">Exklusiv präsentiert von Happy Property</span>
+    </div>
+    <h1>{{project.name}}.</h1>
+    <p class="sub">{{texts.hero_subtitle}}</p>
+  </div>
+</section>
+
+<!-- ═══════════════════ PAGE 2 — LAGE ═══════════════════ -->
+<section class="page page-lage">
+  <div class="left">
+    <span class="coral-rule"></span>
+    <span class="section-label">Die Lage</span>
+    <h2>{{texts.lage_heading}}</h2>
+    <p>{{texts.lage_text}}</p>
+  </div>
+  <div class="right">
+    {{#images.lage_aerial_url}}<img src="{{{images.lage_aerial_url}}}" alt="" />{{/images.lage_aerial_url}}
+    {{^images.lage_aerial_url}}<div class="placeholder">LUFTBILD LAGE</div>{{/images.lage_aerial_url}}
+  </div>
+  <div class="footer"><span>{{footer_label}}</span><span>2 / 13</span></div>
+</section>
+
+<!-- ═══════════════════ PAGE 3 — STANDORT ═══════════════════ -->
+<section class="page page-standort">
+  <span class="coral-rule"></span>
+  <span class="section-label">Standort · Erreichbarkeit</span>
+  <h2>{{texts.standort_heading}}</h2>
+  <div class="grid">
+    <div class="poi-list">
+      {{#pois}}
+        <div class="poi"><span class="min">{{minutes}} Min.</span><span class="name">{{name}}</span></div>
+      {{/pois}}
+      {{^pois}}<p style="color:#999;font-style:italic;">Noch keine POIs gepflegt.</p>{{/pois}}
+    </div>
+    <div>
+      <div class="map-container">
+        {{#images.lage_map_url}}<img src="{{{images.lage_map_url}}}" alt="" />{{/images.lage_map_url}}
+        {{^images.lage_map_url}}<div class="placeholder">MAP-SCREENSHOT</div>{{/images.lage_map_url}}
+      </div>
+      {{#project.google_maps_url}}<a href="{{{project.google_maps_url}}}" class="maps-btn">In Google Maps öffnen</a>{{/project.google_maps_url}}
+    </div>
+  </div>
+  <div class="footer"><span>{{footer_label}}</span><span>3 / 13</span></div>
+</section>
+
+<!-- ═══════════════════ PAGE 4 — PROJEKT ═══════════════════ -->
+<section class="page page-projekt">
+  <div>
+    <span class="coral-rule"></span>
+    <span class="section-label">Das Projekt</span>
+    <h2>{{texts.projekt_heading}}</h2>
+  </div>
+  <div class="image-frame">
+    {{#images.projekt_overview_url}}<img src="{{{images.projekt_overview_url}}}" alt="" />{{/images.projekt_overview_url}}
+    {{^images.projekt_overview_url}}<div class="placeholder">ANLAGEN-ÜBERSICHT</div>{{/images.projekt_overview_url}}
+  </div>
+  <p class="strap">{{texts.projekt_subtitle}}</p>
+  <div class="footer"><span>{{footer_label}}</span><span>4 / 13</span></div>
+</section>
+
+<!-- ═══════════════════ PAGE 5 — USP ═══════════════════ -->
+<section class="page page-usp">
+  <div class="heading-block">
+    <span class="coral-rule"></span>
+    <span class="section-label">Der USP · Das Community-Gebäude</span>
+    <h2>{{texts.usp_heading}}</h2>
+    <p class="subtitle">{{texts.usp_subtitle}}</p>
+  </div>
+  <div class="image-frame">
+    {{#images.usp_hero_url}}<img src="{{{images.usp_hero_url}}}" alt="" />{{/images.usp_hero_url}}
+    {{^images.usp_hero_url}}<div class="placeholder">COMMUNITY-GEBÄUDE</div>{{/images.usp_hero_url}}
+  </div>
+  <div class="usp-grid">
+    {{#texts.usp_features}}
+      <div class="usp-feature">
+        <span class="coral-rule"></span>
+        <div class="value">{{value}}</div>
+        <div class="label">{{label}}</div>
+      </div>
+    {{/texts.usp_features}}
+  </div>
+  <div class="footer"><span>{{footer_label}}</span><span>5 / 13</span></div>
+</section>
+
+<!-- ═══════════════════ PAGE 6 — AMENITIES ═══════════════════ -->
+<section class="page page-amenities">
+  <span class="coral-rule"></span>
+  <span class="section-label">Ausstattung</span>
+  <h2>{{texts.amenities_heading}}</h2>
+  <p class="subtitle" style="margin-bottom:8mm;">{{texts.amenities_subtitle}}</p>
+  <div class="amenity-grid">
+    <div class="amenity">
+      {{#images.amenity_pool_url}}<img src="{{{images.amenity_pool_url}}}" alt="" />{{/images.amenity_pool_url}}
+      {{^images.amenity_pool_url}}<div class="placeholder">POOL</div>{{/images.amenity_pool_url}}
+      <div class="label">Pool</div>
+    </div>
+    <div class="amenity">
+      {{#images.amenity_cafe_url}}<img src="{{{images.amenity_cafe_url}}}" alt="" />{{/images.amenity_cafe_url}}
+      {{^images.amenity_cafe_url}}<div class="placeholder">CAFÉ</div>{{/images.amenity_cafe_url}}
+      <div class="label">Café & Lounge</div>
+    </div>
+    <div class="amenity">
+      {{#images.amenity_gym_url}}<img src="{{{images.amenity_gym_url}}}" alt="" />{{/images.amenity_gym_url}}
+      {{^images.amenity_gym_url}}<div class="placeholder">GYM</div>{{/images.amenity_gym_url}}
+      <div class="label">Gym & Yoga</div>
+    </div>
+    <div class="amenity">
+      {{#images.amenity_lobby_url}}<img src="{{{images.amenity_lobby_url}}}" alt="" />{{/images.amenity_lobby_url}}
+      {{^images.amenity_lobby_url}}<div class="placeholder">LOBBY</div>{{/images.amenity_lobby_url}}
+      <div class="label">Lobby & Concierge</div>
+    </div>
+  </div>
+  <div class="footer"><span>{{footer_label}}</span><span>6 / 13</span></div>
+</section>
+
+<!-- ═══════════════════ PAGE 7 — PREISÜBERSICHT ═══════════════════ -->
+<section class="page page-preise">
+  <span class="coral-rule"></span>
+  <span class="section-label">Preisübersicht</span>
+  <h2>{{texts.preise_heading}}</h2>
+  <p class="subtitle" style="margin-bottom:10mm;">{{texts.preise_subtitle}}</p>
+  <table class="preis-table">
+    <thead>
+      <tr><th>Typ</th><th>Wohnfläche</th><th>Netto</th><th class="gross">Brutto inkl. 19% MwSt.</th></tr>
+    </thead>
+    <tbody>
+      {{#price_rows}}
+        <tr>
+          <td class="type">{{type}}</td>
+          <td>{{sqm_str}}</td>
+          <td>{{price_str}}</td>
+          <td class="gross">{{gross_str}}</td>
+        </tr>
+      {{/price_rows}}
+      {{^price_rows}}
+        <tr><td colspan="4" style="text-align:center;color:#999;padding:20mm;">Noch keine Wohnungen gepflegt.</td></tr>
+      {{/price_rows}}
+    </tbody>
+  </table>
+  <div class="footer-box">
+    <div class="ttl">{{texts.preise_footer}}</div>
+    <div class="txt">{{texts.preise_footer_text}}</div>
+  </div>
+  <div class="footer"><span>{{footer_label}}</span><span>7 / 13</span></div>
+</section>
+
+<!-- ═══════════════════ PAGE 8 — EXTRAS ═══════════════════ -->
+<section class="page page-extras">
+  <span class="coral-rule"></span>
+  <span class="section-label">Extras & Ausstattungspakete</span>
+  <h2>{{texts.extras_heading}}</h2>
+  <p class="subtitle">{{texts.extras_subtitle}}</p>
+  <table class="extras-table">
+    <thead>
+      <tr><th>Paket</th><th>Studio</th><th>1-Schlafz.</th><th>2-Schlafz.</th><th>3-Schlafz.</th></tr>
+    </thead>
+    <tbody>
+      {{#texts.extras_table}}
+        <tr><td class="name">{{name}}</td><td>{{studio}}</td><td>{{br1}}</td><td>{{br2}}</td><td>{{br3}}</td></tr>
+      {{/texts.extras_table}}
+    </tbody>
+  </table>
+  <div class="extras-included">
+    <div class="ttl" style="font-weight:700;font-size:10pt;margin-bottom:4px;">{{texts.extras_included_title}}</div>
+    <div class="txt" style="font-size:9pt;color:#444;line-height:1.5;">{{texts.extras_included_text}}</div>
+  </div>
+  <div class="footer"><span>{{footer_label}}</span><span>8 / 13</span></div>
+</section>
+
+<!-- ═══════════════════ PAGE 9 — INTERIEUR 1 ═══════════════════ -->
+<section class="page page-interior">
+  <span class="coral-rule"></span>
+  <span class="section-label">Interieur</span>
+  <h2>{{texts.interior_heading_1}}</h2>
+  <p class="subtitle">{{texts.interior_subtitle_1}}</p>
+  <div class="interior-grid">
+    <div class="interior-img">
+      <div class="frame">
+        {{#images.interior_living_url}}<img src="{{{images.interior_living_url}}}" alt="" />{{/images.interior_living_url}}
+        {{^images.interior_living_url}}<div class="placeholder">WOHNBEREICH</div>{{/images.interior_living_url}}
+      </div>
+      <div class="cap">Wohnbereich</div>
+    </div>
+    <div class="interior-img">
+      <div class="frame">
+        {{#images.interior_kitchen_url}}<img src="{{{images.interior_kitchen_url}}}" alt="" />{{/images.interior_kitchen_url}}
+        {{^images.interior_kitchen_url}}<div class="placeholder">KÜCHE</div>{{/images.interior_kitchen_url}}
+      </div>
+      <div class="cap">Küche</div>
+    </div>
+  </div>
+  <div class="footer"><span>{{footer_label}}</span><span>9 / 13</span></div>
+</section>
+
+<!-- ═══════════════════ PAGE 10 — INTERIEUR 2 ═══════════════════ -->
+<section class="page page-interior">
+  <span class="coral-rule"></span>
+  <span class="section-label">Interieur</span>
+  <h2>{{texts.interior_heading_2}}</h2>
+  <p class="subtitle">{{texts.interior_subtitle_2}}</p>
+  <div class="interior-grid">
+    <div class="interior-img">
+      <div class="frame">
+        {{#images.interior_bedroom_url}}<img src="{{{images.interior_bedroom_url}}}" alt="" />{{/images.interior_bedroom_url}}
+        {{^images.interior_bedroom_url}}<div class="placeholder">SCHLAFZIMMER</div>{{/images.interior_bedroom_url}}
+      </div>
+      <div class="cap">Schlafzimmer</div>
+    </div>
+    <div class="interior-img">
+      <div class="frame">
+        {{#images.interior_bathroom_url}}<img src="{{{images.interior_bathroom_url}}}" alt="" />{{/images.interior_bathroom_url}}
+        {{^images.interior_bathroom_url}}<div class="placeholder">BADEZIMMER</div>{{/images.interior_bathroom_url}}
+      </div>
+      <div class="cap">Badezimmer</div>
+    </div>
+  </div>
+  <div class="footer"><span>{{footer_label}}</span><span>10 / 13</span></div>
+</section>
+
+<!-- ═══════════════════ PAGE 11 — HIGHLIGHT ═══════════════════ -->
+<section class="page page-highlight">
+  <div class="top">
+    {{#images.highlight_url}}<img src="{{{images.highlight_url}}}" alt="" />{{/images.highlight_url}}
+    {{^images.highlight_url}}<div class="placeholder">HIGHLIGHT</div>{{/images.highlight_url}}
+  </div>
+  <div class="bottom">
+    <div class="text-block">
+      <span class="coral-rule"></span>
+      <span class="section-label">Das Highlight</span>
+      <h2>{{texts.highlight_heading}}</h2>
+      <p class="subtitle">{{texts.highlight_subtitle}}</p>
+    </div>
+    <div class="value-block">
+      <div class="v">{{texts.highlight_value}}</div>
+      <div class="l">{{texts.highlight_value_label}}</div>
+    </div>
+  </div>
+  <div class="footer" style="color:rgba(255,252,246,0.5);"><span>{{footer_label}}</span><span>11 / 13</span></div>
+</section>
+
+<!-- ═══════════════════ PAGE 12 — ZAHLUNGSPLAN ═══════════════════ -->
+<section class="page page-zahlung">
+  <span class="coral-rule"></span>
+  <span class="section-label">Zahlungsplan</span>
+  <h2>{{texts.zahlungsplan_heading}}</h2>
+  <p class="subtitle">{{texts.zahlungsplan_subtitle}}</p>
+  <div class="zahlung-grid">
+    {{#payment_schedule}}
+      <div class="zahlung-step">
+        <div class="num">{{number}}</div>
+        <div class="pct">{{percent}}</div>
+        <div class="label">{{label}}</div>
+        <div class="trigger">{{trigger}}</div>
+      </div>
+    {{/payment_schedule}}
+  </div>
+  <p class="zahlung-footer">{{texts.zahlungsplan_footer}}</p>
+  <div class="footer"><span>{{footer_label}}</span><span>12 / 13</span></div>
+</section>
+
+<!-- ═══════════════════ PAGE 13 — CTA ═══════════════════ -->
+<section class="page page-cta">
+  <div class="bg">
+    {{#images.cta_background_url}}<img src="{{{images.cta_background_url}}}" alt="" />{{/images.cta_background_url}}
+    {{^images.cta_background_url}}<div style="width:100%;height:100%;background:linear-gradient(135deg,#0a0a0a,#1f1f1f);"></div>{{/images.cta_background_url}}
+  </div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="label-row">
+      <span class="coral-rule"></span>
+      <span class="label">Der nächste Schritt</span>
+    </div>
+    <h1>{{texts.cta_heading}}</h1>
+    <p class="sub-cta">{{texts.cta_subtitle}}</p>
+    <div class="cta-grid">
+      {{#texts.cta_steps}}
+        <div class="cta-step">
+          <div class="num">{{number}}</div>
+          <div class="ttl">{{title}}</div>
+          <div class="txt">{{text}}</div>
+        </div>
+      {{/texts.cta_steps}}
+    </div>
+  </div>
+  <div class="cta-hp-logo">HP</div>
+  <p class="cta-disclaimer">{{texts.cta_disclaimer}}</p>
+</section>
+
+</body>
+</html>
